@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/css/reset.css" />  
+    <link rel="stylesheet" href="/css/base.css" />  
+  </head>
+  <title>LanXi - ToDoList</title>
+  <body>
+    <!-- header -->
+    <div id="header">
+      <p>ToDoList</p>
+      <p>{{ user.nickname }} &nbsp;<a id="logout" href="{{ logout_url }}">logout</a></p>
+    </div>
+
+    <!-- content -->
+    <div id="content">
+      {% block content %}{% endblock %}    
+    </div>
+  </body>
+</html>

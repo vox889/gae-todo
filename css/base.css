@@ -1,0 +1,98 @@
+body {
+  font-family: Arial, Verdana;
+  font-size: 16px;
+}
+
+#header {
+  color: #FFF;
+  background-color: #36393D;
+  padding: 10px;
+}
+
+#header a {
+  color: #FFF;
+}
+
+#content {
+  margin: 20px;
+}
+
+#logout {
+  font-size: 12px;
+  color: #FF1A00 !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  padding: 5px;
+}
+
+input[type=text] {
+  font-size: 16px;
+}
+
+input[type=submit] {
+  color: #36393D;
+  border-radius: 5px;
+  border: 0;
+  background-color: #EEE;
+  cursor: pointer;
+}
+
+input[type=submit].small {
+  font-size: 9px;
+  padding: 3px;
+}
+
+input[type=submit].big {
+  font-size: 18px;
+}
+
+input[type=submit]:hover {
+  color: #FFF;
+  background-color: #36393D;
+}
+
+.action {
+  border-radius: 10px;
+  background-color: #C3D9FF;
+  padding: 10px;
+  margin-right: 25px;
+}
+
+.fl {
+  float: left;
+}
+
+.done {
+  font-style: italic;
+  text-decoration: line-through;
+}
+
+.desc {
+  font-size: 11px;
+  color: #36393D;
+  margin-left: 16px;
+}
+
+ul.list {
+  padding-top: 5px;
+  list-style: inside square;
+}
+
+ul.list li {
+  font-size: 18px;
+  padding: 5px;
+}
+
+ul.list li.none {
+  font-size: 14px !important;
+  font-style: italic;
+}
+
+ul.list li form {
+  display: inline;
+}

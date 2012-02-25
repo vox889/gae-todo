@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="action fl">
+      <form method="post">
+        <table>
+          <tr>
+            <td>New Item</td>
+          </tr>
+          <tr>
+            <td><input type="text" name="name" size="25" required="required" placeholder="Item name" /></td>
+          </tr>
+          <tr>
+            <td>Description</td>
+          </tr>
+          <tr>
+            <td><input type="text" name="desc" size="25" required="required" placeholder="Item description" /></td>
+          </tr>
+          <tr>
+            <td><input class="big" type="submit" value="Add" /></td>
+          </tr>      
+        </table>
+      </form>    
+    </div>
+
+    <div class="fl">
+      <h4><a href="/">ALL LIST</a> ~ {{ list.name }}</h4>
+      <div>
+        <ul class="list">
+          {% if count %}
+            {% for item in list.items %}
+            <li>
+              {% if item.checked %}
+                 <span class="done">{{ item.name|escape }}</span>
+                 <form method="post" action="/{{ list.key.id_or_name }}/{{ item.key.id_or_name }}/uncheck">
+                   <input class="small" type="submit" value="undone" />
+                 </form>
+              {% else %}
+                 <span>{{ item.name|escape }}</span>
+                 <form method="post" action="/{{ list.key.id_or_name }}/{{ item.key.id_or_name }}/check">
+                    <input class="small" type="submit" value="done" />
+                  </form>              
+                {% endif %}
+              <form method="post" action="/{{ list.key.id_or_name }}/{{ item.key.id_or_name }}/delete">
+                <input class="small" type="submit" value="delete" />
+              </form>
+              <p class="desc">{{ item.desc|escape }}</p>  
+            </li>
+            {% endfor %}
+        {% else %}
+          <li class="none">No Items</li>
+        {% endif %}
+        </ul>
+      </div>    
+    </div>
+
+{% endblock %}

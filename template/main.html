@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="action fl">
+      <form method="post">
+        <table>
+          <tr>
+            <td>New List</td>
+          </tr>
+          <tr>
+            <td><input type="text" name="name" size="25" required="required" placeholder="List name" /></td>
+          </tr>
+          <tr>
+            <td><input class="big" type="submit" value="Add" /></td>
+          </tr>      
+        </table>
+      </form>
+    </div>
+
+    <div class="fl">
+      <h4>ALL LIST</h4>
+      <div>
+        <ul class="list">
+          {% if count %}
+            {% for todo_list in todo_lists %}
+              <li>
+                <a href="/{{ todo_list.key.id_or_name }}">{{ todo_list.name|escape }}</a>
+                <form method="post" action="/{{ todo_list.key.id_or_name }}/delete">
+                  <input class="small" type="submit" value="delete" />
+                </form>
+              </li>
+            {% endfor %}
+          {% else %}
+            <li class="none">No Lists</li>
+          {% endif %}
+        </ul>
+      </div>    
+    </div>
+{% endblock %}
